@@ -7,10 +7,7 @@ serand.on('token', 'info', function (id, token, done) {
     }
     var options = {
         method: 'GET',
-        url: '/apis/v/tokens/' + id,
-        headers: {
-            'X-Host': 'accounts.serandives.com'
-        },
+        url: 'https://accounts.serandives.com/apis/v/tokens/' + id,
         dataType: 'json',
         success: function (token) {
             done(false, token);
