@@ -17,6 +17,7 @@ serand.on('token', 'info', function (id, token, done) {
         }
     };
     if (token) {
+        options.headers = options.headers || {};
         options.headers['Authorization'] = 'Bearer ' + token;
     }
     $.ajax(options);
