@@ -1,4 +1,5 @@
 var serand = require('serand');
+var utils = require('utils');
 
 serand.on('token', 'info', function (id, token, done) {
     if (!done) {
@@ -7,7 +8,7 @@ serand.on('token', 'info', function (id, token, done) {
     }
     var options = {
         method: 'GET',
-        url: 'https://accounts.serandives.com/apis/v/tokens/' + id,
+        url: utils.resolve('accounts://apis/v/tokens/' + id),
         dataType: 'json',
         success: function (token) {
             done(false, token);
