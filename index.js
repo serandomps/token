@@ -11,10 +11,10 @@ serand.on('token', 'info', function (id, token, done) {
         url: utils.resolve('accounts://apis/v/tokens/' + id),
         dataType: 'json',
         success: function (token) {
-            done(false, token);
+            done(null, token);
         },
-        error: function () {
-            done('permissions error');
+        error: function (xhr, status, err) {
+            done(err || status || xhr);
         }
     };
     if (token) {
