@@ -8,7 +8,7 @@ serand.on('token', 'info', function (id, token, done) {
     }
     var options = {
         method: 'GET',
-        url: utils.resolve('accounts://apis/v/tokens/' + id),
+        url: utils.resolve('accounts:///apis/v/tokens/' + id),
         dataType: 'json',
         success: function (token) {
             done(null, token);
